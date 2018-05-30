@@ -9,7 +9,8 @@ public class Ship : MonoBehaviour
 {
     public float MoveSpeed = 250f;
 
-    [Header("Boundry")] public float BoundaryBuffer = 4;
+    [Header("Boundry")] 
+    public float BoundaryBuffer = 4;
     public float BoundaryAdjustForce = 70;
 
     private Damageable _damageable;

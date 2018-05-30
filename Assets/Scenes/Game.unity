@@ -195,7 +195,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -2, y: 1.4, z: 14}
   m_LocalScale: {x: 2395.494, y: 2395.494, z: 2395.494}
-  m_Children: []
+  m_Children:
+  - {fileID: 1435243171}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
@@ -306,6 +307,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 987f909a38bc2c44aa5cfeff92abfedb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1435243170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1435243171}
+  - component: {fileID: 1435243172}
+  m_Layer: 0
+  m_Name: AsteroidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435243171
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435243170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 285032724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435243172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435243170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bb7cfd0abbb63469cee86e03176ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AsteroidPrefab: {fileID: 114429083883510952, guid: e5bbdad905f52634887266df7f935196,
+    type: 2}
+  ScaleRange: {x: 0.7, y: 3}
+  MassRange: {x: 3, y: 7}
+  AsteroidsCount: 4
+  InitialSpeed: 10
 --- !u!1 &1692592046
 GameObject:
   m_ObjectHideFlags: 0
