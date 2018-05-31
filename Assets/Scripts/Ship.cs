@@ -8,9 +8,9 @@ using UnityEngine.Assertions;
 public class Ship : MonoBehaviour
 {
     public float MoveSpeed = 250f;
+    public WeaponBase[] WeaponsPrefabs;
 
-    [Header("Boundry")] 
-    public float BoundaryBuffer = 4;
+    [Header("Boundry")] public float BoundaryBuffer = 4;
     public float BoundaryAdjustForce = 70;
 
     private Damageable _damageable;
@@ -25,6 +25,13 @@ public class Ship : MonoBehaviour
         Assert.IsNotNull(_damageable);
         Assert.IsNotNull(_rigidBody);
         _levelBoundary = new LevelBoundary(Camera.main);
+
+        foreach (var prefab in WeaponsPrefabs)
+        {
+            var go = Instantiate(prefab, transform, false);
+            //go.name = "Weapon";
+            go.GetComponent<WeaponBase>().Ship = _damageable;
+        }
     }
 
     // Update is called once per frame
