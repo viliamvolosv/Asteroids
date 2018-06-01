@@ -45,6 +45,11 @@ public class Asteroid : MonoBehaviour
         }
     }
 
+    public void SetHp(int hp)
+    {
+        _damageable.StartHealth = hp;
+    }
+
 
     private void FixedUpdate()
     {

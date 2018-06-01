@@ -19,7 +19,7 @@ public class Bullet : BulletBase
         var ship = other.GetComponent<Ship>();
         if (ship != null)
             return;
-        Debug.Log("OnTriggerEnter " + gameObject.name);
+
         if (damageable != null)
         {
             damageable.TakeDamage(Damage);

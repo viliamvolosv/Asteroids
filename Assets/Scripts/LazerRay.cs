@@ -12,11 +12,13 @@ public class LazerRay : BulletBase
     private float _endTime;
     
     RaycastHit[] hits;
+    private List<Damageable> _list;
 
     void Start()
     {
         Assert.IsNotNull(LineRenderer);
         _endTime = Time.realtimeSinceStartup + LifeTime;
+        _list = new List<Damageable>();
         SetPosition();
     }
 
@@ -49,9 +51,10 @@ public class LazerRay : BulletBase
             RaycastHit hit = hits[i];
             Damageable damageable = hit.transform.GetComponent<Damageable>();
 
-            if (damageable)
+            if (damageable && !_list.Contains(damageable))
             {
                 damageable.TakeDamage(Damage);
+                _list.Add(damageable);
             }
         }
     }

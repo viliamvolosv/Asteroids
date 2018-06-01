@@ -11,6 +11,7 @@ public class AsteroidsManager : MonoBehaviour
     [Header("Asteroids")] public Asteroid AsteroidPrefab;
     public Vector2 ScaleRange;
     public Vector2 MassRange;
+    public IntVector2 HpRange;
     public int AsteroidsCount = 4;
     public float InitialSpeed = 10f;
 
@@ -38,6 +39,7 @@ public class AsteroidsManager : MonoBehaviour
         asteroid.Rigidbody.mass = Mathf.Lerp(ScaleRange.x, ScaleRange.y, UnityEngine.Random.value);
         asteroid.transform.position = GetRandomStartPosition(asteroid.Scale);
         asteroid.Rigidbody.velocity = GetRandomDirection() * InitialSpeed;
+        asteroid.SetHp(Random.Range(HpRange.x,HpRange.y));
 
         _asteroids.Add(asteroid);
         asteroid.GetComponent<Damageable>().OnDiedAction += OnDiedAction;

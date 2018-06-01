@@ -17,8 +17,6 @@ public class SimpleWeapon : WeaponBase
         if (!base.Shoot())
             return false;
 
-        Debug.Log("Shoot " + gameObject.name);
-
         var go = Instantiate(Bullet);
 
         go.transform.position = Ship.transform.position;
