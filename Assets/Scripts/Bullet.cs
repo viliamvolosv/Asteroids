@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : BulletBase
 {
     public float Speed;
     public float LifeTime;
-    public int Damage = 1;
     float _startTime;
 
     private void Start()

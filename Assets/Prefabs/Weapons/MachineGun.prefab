@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f0642d15b5f184da5ced4605f27224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Couldown: 1
+  Couldown: 0.3
   Key: 32
+  Ship: {fileID: 0}
   Bullet: {fileID: 1516399705851658, guid: 4c27612b8f50f644caff503d67c4db59, type: 2}

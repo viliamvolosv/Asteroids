@@ -1,19 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Core.Utilities;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Random = UnityEngine.Random;
 
 public class AsteroidsManager : MonoBehaviour
 {
-
-    [Header("Asteroids")]
-    public Asteroid AsteroidPrefab;
+    [Header("Asteroids")] public Asteroid AsteroidPrefab;
     public Vector2 ScaleRange;
     public Vector2 MassRange;
     public int AsteroidsCount = 4;
-    public float InitialSpeed = 10f; 
-    
+    public float InitialSpeed = 10f;
+
     List<Asteroid> _asteroids = new List<Asteroid>();
     LevelBoundary _levelBoundary;
 
@@ -21,8 +21,7 @@ public class AsteroidsManager : MonoBehaviour
     public void Start()
     {
         Assert.IsNotNull(AsteroidPrefab);
-       // ResetAll();
-      //  GenerateRandomAttributes();
+
         _levelBoundary = new LevelBoundary(Camera.main);
         for (int i = 0; i < AsteroidsCount; i++)
         {
@@ -35,14 +34,21 @@ public class AsteroidsManager : MonoBehaviour
         var go = Instantiate(AsteroidPrefab);
         var asteroid = go.GetComponent<Asteroid>();
 
-        //var attributes = _cachedAttributes.Dequeue();
-
         asteroid.Scale = Mathf.Lerp(ScaleRange.x, ScaleRange.y, UnityEngine.Random.value);
         asteroid.Rigidbody.mass = Mathf.Lerp(ScaleRange.x, ScaleRange.y, UnityEngine.Random.value);
         asteroid.transform.position = GetRandomStartPosition(asteroid.Scale);
         asteroid.Rigidbody.velocity = GetRandomDirection() * InitialSpeed;
 
         _asteroids.Add(asteroid);
+        asteroid.GetComponent<Damageable>().OnDiedAction += OnDiedAction;
+    }
+
+    private void OnDiedAction(Damageable damageable)
+    {
+        damageable.OnDiedAction -= OnDiedAction;
+        var asteroid = damageable.GetComponent<Asteroid>();
+        _asteroids.Remove(asteroid);
+        SpawnNext();
     }
 
     Vector3 GetRandomDirection()

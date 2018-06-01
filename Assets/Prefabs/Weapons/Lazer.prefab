@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Couldown: 1
   Key: 304
-  Bullet: {fileID: 1516399705851658, guid: 4c27612b8f50f644caff503d67c4db59, type: 2}
+  Ship: {fileID: 0}
+  Bullet: {fileID: 1611959863583664, guid: 578cd0f0bec9fa444b04f4d8d5865724, type: 2}

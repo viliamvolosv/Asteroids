@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class SimpleWeapon : WeaponBase {
-	
-	public GameObject Bullet;
-	public float BulletOffsetDistance = 2f;
+public class SimpleWeapon : WeaponBase
+{
+    public GameObject Bullet;
 
-	private void Start()
-	{
-		Assert.IsNotNull(Bullet);
-	}
+    private void Start()
+    {
+        Assert.IsNotNull(Bullet);
+    }
 
-	public override bool Shoot()
-	{
-		if (!base.Shoot())
-			return false;
-		
-		Debug.Log("Shoot "+gameObject.name);
+    public override bool Shoot()
+    {
+        if (!base.Shoot())
+            return false;
 
-		var bullet = Instantiate(Bullet);
+        Debug.Log("Shoot " + gameObject.name);
 
-		bullet.transform.position = Ship.transform.position + Ship.transform.forward * BulletOffsetDistance;
-		bullet.transform.rotation = Ship.transform.rotation;
-		return true;
-	}
+        var go = Instantiate(Bullet);
+
+        go.transform.position = Ship.transform.position;
+        go.transform.rotation = Ship.transform.rotation;
+        var bullet = go.GetComponent<BulletBase>();
+        bullet.Ship = Ship.gameObject.GetComponent<Ship>();
+
+        return true;
+    }
 }
