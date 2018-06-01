@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0eee50a82f54f24b95ac10763601db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LineRenderer: {fileID: 0}
+  Ship: {fileID: 0}
+  Damage: 1
+  LineRenderer: {fileID: 120195370708821074}
   ReyLenght: 70
   LifeTime: 0.3
 --- !u!120 &120195370708821074

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54525397576014448}
   - component: {fileID: 114588812037987528}
   - component: {fileID: 114314024173347944}
+  - component: {fileID: 65850774477359242}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -129,6 +130,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
+--- !u!65 &65850774477359242
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651525262666390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.06, y: 1.12, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114314024173347944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 250
+  WeaponsPrefabs:
+  - {fileID: 114855683746351102, guid: a2ce75d75f884d64ea1adebf3de9ca5d, type: 2}
+  - {fileID: 114486686212188298, guid: 1e9b3dfc473bcf14983f9a35d13276c3, type: 2}
   BoundaryBuffer: 4
   BoundaryAdjustForce: 70
 --- !u!114 &114588812037987528

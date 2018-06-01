@@ -272,11 +272,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114314024173347944, guid: 987f909a38bc2c44aa5cfeff92abfedb,
-        type: 2}
-      propertyPath: WeaponsPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4148417443517182, guid: 987f909a38bc2c44aa5cfeff92abfedb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -309,20 +304,55 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114314024173347944, guid: 987f909a38bc2c44aa5cfeff92abfedb,
+    - target: {fileID: 114588812037987528, guid: 987f909a38bc2c44aa5cfeff92abfedb,
         type: 2}
-      propertyPath: WeaponsPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 114855683746351102, guid: a2ce75d75f884d64ea1adebf3de9ca5d,
-        type: 2}
-    - target: {fileID: 114314024173347944, guid: 987f909a38bc2c44aa5cfeff92abfedb,
-        type: 2}
-      propertyPath: WeaponsPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 114486686212188298, guid: 1e9b3dfc473bcf14983f9a35d13276c3,
-        type: 2}
+      propertyPath: DestroyWhenDie
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 987f909a38bc2c44aa5cfeff92abfedb, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &723845089
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.1666278
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908849147535464, guid: e5bbdad905f52634887266df7f935196, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e5bbdad905f52634887266df7f935196, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1435243170
 GameObject:
@@ -368,7 +398,10 @@ MonoBehaviour:
     type: 2}
   ScaleRange: {x: 0.7, y: 3}
   MassRange: {x: 3, y: 7}
-  AsteroidsCount: 4
+  HpRange:
+    x: 1
+    y: 10
+  AsteroidsCount: 6
   InitialSpeed: 10
 --- !u!1 &1692592046
 GameObject:

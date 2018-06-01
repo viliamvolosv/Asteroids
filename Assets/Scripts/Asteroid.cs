@@ -94,4 +94,18 @@ public class Asteroid : MonoBehaviour
     {
         return Vector3.Dot(dir, Rigidbody.velocity) > 0;
     }
+    
+    public void OnTriggerEnter(Collider other)
+    {
+        var damageable = other.GetComponent<Damageable>();
+        var ship = other.GetComponent<Ship>();
+        if (ship == null)
+            return;
+
+        if (damageable != null)
+        {
+            damageable.TakeDamage(9999);
+            Destroy(gameObject);
+        }
+    }
 }
