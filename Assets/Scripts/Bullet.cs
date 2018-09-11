@@ -22,7 +22,7 @@ public class Bullet : BulletBase
 
         if (damageable != null)
         {
-            damageable.TakeDamage(Damage);
+            damageable.TakeDamage(Damage, this);
             Destroy(gameObject);
         }
     }

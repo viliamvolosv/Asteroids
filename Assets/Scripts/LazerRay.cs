@@ -53,7 +53,7 @@ public class LazerRay : BulletBase
 
             if (damageable && !_list.Contains(damageable))
             {
-                damageable.TakeDamage(Damage);
+                damageable.TakeDamage(Damage, this);
                 _list.Add(damageable);
             }
         }

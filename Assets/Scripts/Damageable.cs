@@ -4,6 +4,12 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+public interface ICanDamage
+{
+    T GetComponent<T>();
+}
+
 public class Damageable : MonoBehaviour
 {
     public int StartHealth = 10;
@@ -52,7 +58,7 @@ public class Damageable : MonoBehaviour
         Health = StartHealth;
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, ICanDamage canDamage)
     {
         Health = Health - damage;
     }

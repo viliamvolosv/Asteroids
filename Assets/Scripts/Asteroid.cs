@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Damageable))]
-public class Asteroid : MonoBehaviour
+public class Asteroid : MonoBehaviour, ICanDamage
 {
     public float MaxSpeed = 10f;
     LevelBoundary _levelBoundary;
@@ -30,7 +30,6 @@ public class Asteroid : MonoBehaviour
         _levelBoundary = new LevelBoundary(Camera.main);
     }
 
-
     public float Scale
     {
         get
@@ -50,7 +49,6 @@ public class Asteroid : MonoBehaviour
         _damageable.StartHealth = hp;
     }
 
-
     private void FixedUpdate()
     {
         var speed = Rigidbody.velocity.magnitude;
@@ -62,13 +60,11 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-
     private void Update()
     {
         CheckForBoundary();
         transform.RotateAround(transform.position, Vector3.up, 30 * Time.deltaTime);
     }
-
 
     void CheckForBoundary()
     {
@@ -94,7 +90,7 @@ public class Asteroid : MonoBehaviour
     {
         return Vector3.Dot(dir, Rigidbody.velocity) > 0;
     }
-    
+
     public void OnTriggerEnter(Collider other)
     {
         var damageable = other.GetComponent<Damageable>();
@@ -104,7 +100,7 @@ public class Asteroid : MonoBehaviour
 
         if (damageable != null)
         {
-            damageable.TakeDamage(9999);
+            damageable.TakeDamage(9999,this);
             Destroy(gameObject);
         }
     }

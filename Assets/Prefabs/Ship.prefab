@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 10
-  DestroyWhenDie: 0
+  DestroyWhenDie: 1
